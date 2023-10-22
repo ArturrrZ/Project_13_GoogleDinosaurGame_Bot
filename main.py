@@ -72,7 +72,9 @@ def new_script_with_pixel_recognition():
 
     end=False
     while not end:
-
+        #stop the game
+        if keyboard.is_pressed('q'):
+            end=True
         y_positions=[678,750]
         for each in y_positions:
 
@@ -87,6 +89,9 @@ def find_google_icon_by_image():
     time.sleep(1)
 
     pyautogui.click(google.x, google.y)
+
+    time.sleep(1)
+    pyautogui.hotkey('ctrl','T')
 
     time.sleep(1)
 
