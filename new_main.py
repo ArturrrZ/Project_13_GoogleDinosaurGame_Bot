@@ -1,5 +1,4 @@
 import pyautogui
-import keyboard
 #install open-cv to use confidence function
 #pip install opencv-python
 
@@ -25,23 +24,10 @@ def old_version_to_find_google_icon():
     pyautogui.press('space')
 
 
+
 #detect cactus
-
 def old_version_with_image_recognition():
-    google = pyautogui.locateCenterOnScreen('google_icon.png', confidence=0.8)
 
-    time.sleep(1)
-
-    pyautogui.click(google.x, google.y)
-
-    time.sleep(1)
-
-    pyautogui.write('https://elgoog.im/dinosaur-game/')
-    pyautogui.press('enter')
-
-    time.sleep(1)
-
-    pyautogui.press('space')
 
     end=False
     while not end:
@@ -66,22 +52,8 @@ def old_version_with_image_recognition():
             # print('There is no big cactus')
             pass
 
-def new_script_with_pixel_recognition():
-    time.sleep(3)
 
-
-    end=False
-    while not end:
-
-        y_positions=[678,750]
-        for each in y_positions:
-
-            r, g, b = pyautogui.pixel(350, each)
-            if r < 200:
-                pyautogui.press('space')
-
-def find_google_icon_by_image():
-    #and start the game
+def find_google_icon():
     google = pyautogui.locateCenterOnScreen('google_icon.png', confidence=0.8)
 
     time.sleep(1)
@@ -93,11 +65,27 @@ def find_google_icon_by_image():
     pyautogui.write('https://elgoog.im/dinosaur-game/')
     pyautogui.press('enter')
 
-    time.sleep(1)
 
-    pyautogui.press('space')
+def new_version_with_pixel_rgb_values():
+    time.sleep(3)
+    while 1:
+
+        y_positions = [678, 740]
+        for each in y_positions:
+            r, g, b = pyautogui.pixel(350, each)
+            if r < 200:
+                pyautogui.press('space')
 
 
+find_google_icon()
+time.sleep(2)
 
-find_google_icon_by_image()
-new_script_with_pixel_recognition()
+pyautogui.press('space')
+
+end=False
+while not end:
+    y_positions=[678,740]
+    for each in y_positions:
+        r, g, b = pyautogui.pixel(350, each)
+        if r < 200:
+            pyautogui.press('space')
