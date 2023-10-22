@@ -30,3 +30,12 @@ print(google.y)
 time.sleep(1)
 
 pyautogui.click(google.x,google.y)
+
+time.sleep(1)
+
+pyautogui.write('https://elgoog.im/dinosaur-game/')
+pyautogui.press('enter')
+
+time.sleep(1)
+
+pyautogui.press('space')
