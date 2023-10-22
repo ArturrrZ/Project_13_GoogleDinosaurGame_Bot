@@ -24,8 +24,7 @@ def old_version_to_find_google_icon():
     pyautogui.press('space')
 
 google=pyautogui.locateCenterOnScreen('google_icon.png',confidence=0.8)
-print(google.x)
-print(google.y)
+
 
 time.sleep(1)
 
@@ -39,3 +38,17 @@ pyautogui.press('enter')
 time.sleep(1)
 
 pyautogui.press('space')
+
+#detect cactus
+
+end=False
+while not end:
+    cactus_big = pyautogui.locateCenterOnScreen('cactus_big.png',confidence=0.5)
+    if cactus_big is not None:
+        print('I found the CACTUS')
+        print(f'His coordinates: {cactus_big.x,cactus_big.y}')
+        if cactus_big.x < 500:
+            pyautogui.press('space')
+    else:
+        # print('There is no big cactus')
+        pass
