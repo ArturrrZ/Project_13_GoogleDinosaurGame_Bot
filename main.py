@@ -45,9 +45,19 @@ end=False
 while not end:
     cactus_big = pyautogui.locateCenterOnScreen('cactus_big.png',confidence=0.5)
     if cactus_big is not None:
-        print('I found the CACTUS')
-        print(f'His coordinates: {cactus_big.x,cactus_big.y}')
+        # print('I found the CACTUS')
+        # print(f'His coordinates: {cactus_big.x,cactus_big.y}')
         if cactus_big.x < 500:
+            pyautogui.press('space')
+    else:
+        # print('There is no big cactus')
+        pass
+
+    cactus_small_part = pyautogui.locateCenterOnScreen('small.png', confidence=0.5)
+    if cactus_small_part is not None:
+        print('I found the CACTUS')
+        print(f'His coordinates: {cactus_small_part.x, cactus_small_part.y}')
+        if cactus_small_part.x < 500:
             pyautogui.press('space')
     else:
         # print('There is no big cactus')
